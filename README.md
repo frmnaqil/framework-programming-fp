@@ -12,3 +12,11 @@
 - Perlunya manajemen pelaksanaan ujian berbasis komputer
 - Kebutuhan untuk manajemen soal dari pembuatan, pengubahan, dan penghapusan soal
 - Kebutuhan untuk melakukan penghitungan nilai ujian
+
+## Contoh Screenshot Aplikasi  
+### Tampilan Utama
+![alt text](https://raw.githubusercontent.com/frmnaqil/framework-programming-fp/master/Screenshot_3.png)
+### Tampilan Dasbor Admin
+![alt text](https://raw.githubusercontent.com/frmnaqil/framework-programming-fp/master/Screenshot_1.png)
+### Tampilan Dasbor Soal
+![alt text](https://raw.githubusercontent.com/frmnaqil/framework-programming-fp/master/Screenshot_2.png)
