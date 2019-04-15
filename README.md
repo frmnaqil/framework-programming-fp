@@ -13,6 +13,9 @@
 - Kebutuhan untuk manajemen soal dari pembuatan, pengubahan, dan penghapusan soal
 - Kebutuhan untuk melakukan penghitungan nilai ujian
 
+## Tampilan Sitemap
+![alt text](https://raw.githubusercontent.com/frmnaqil/framework-programming-fp/master/gloomap_b7a92f51.png)
+
 ## Contoh Screenshot Aplikasi  
 ### Tampilan Utama
 ![alt text](https://raw.githubusercontent.com/frmnaqil/framework-programming-fp/master/Screenshot_3.png)
