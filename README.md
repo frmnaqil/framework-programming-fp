@@ -23,3 +23,9 @@
 ![alt text](https://raw.githubusercontent.com/frmnaqil/framework-programming-fp/master/Screenshot_1.png)
 ### Tampilan Dasbor Soal
 ![alt text](https://raw.githubusercontent.com/frmnaqil/framework-programming-fp/master/Screenshot_2.png)
+
+### Use Case
+- Use Case Admin
+![alt text](UseCase/UseCaseAdmin.png)
+- Use Case Peserta
+![alt text](UseCase/UseCasePeserta.png)
