@@ -11,15 +11,13 @@
   <meta name="author" content="">
 
   <title>Home</title>
+  <link rel="shortcut icon" href="#">
 
-  <!-- Custom fonts for this template-->
-  <link href="<c:url value="/resources/vendor/fontawesome-free/css/all.min.css"/>" rel="stylesheet" type="text/css">
 
-  <!-- Page level plugin CSS-->
-  <link href="<c:url value="/resources/vendor/datatables/dataTables.bootstrap4.css"/>" rel="stylesheet">
-
-  <!-- Custom styles for this template-->
-  <link href="<c:url value="/resources/css/sb-admin.css"/>" rel="stylesheet">
+  <link href="<c:url value="/resources/bootstrap.min.css"/>" rel="stylesheet">
+  <link href="<c:url value="/resources/sticky.css"/>" rel="stylesheet">
+  <link href="<c:url value="/resources/font-awesome.min.css"/>" rel="stylesheet">
+  <script src="<c:url value="/resources/jquery.min.js"/>" type="text/javascript"></script>
 
 </head>
 
@@ -29,7 +27,7 @@
             <div class="container">
                 <div class="navbar-header">                 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="#" >
+                    <a class="navbar-brand" href="<c:url value="/"/>" >
                         ITS
                     </a>
                 </div>
@@ -37,7 +35,7 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        &nbsp;
+                    	<li>&nbsp;</li>
                     </ul>
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
@@ -51,14 +49,15 @@
  
     <img class="mb-4" src="https://katamata.files.wordpress.com/2011/12/lambang-its-png-v2.png" alt="Logo-ITS" width="25%">
 
-      <main role="main" class="inner cover">
+      <div class="inner cover">
         <h1 >Selamat Datang di Ujian Online Berbasis Komputer</h1>
         <p class="lead">Computer Assisted Test ini dipersembahkan oleh Departemen Informatika bagi mahasiswa yang ingin mencoba simulasi Tes Kompetensi Dasar (TKD) secara online dengan bank soal yang terbaru.</p><br>
         <p class="lead">
           <a href="#" class="btn btn-lg btn-outline-primary mr-sm-1">Sign in</a>
-          <a href="#" class="btn btn-lg btn-outline-secondary ml-sm-1">Register</a>
+          
+          <a href="peserta/register" class="btn btn-lg btn-outline-secondary ml-sm-1">Register</a>
         </p>
-      </main>
+      </div>
 
     
     </div>
