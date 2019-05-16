@@ -2,9 +2,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Debug</title>
 </head>
 <body>
-
+	Peserta Debug
+	Debug result : ${peserta.name} ${peserta.email} ${peserta.password}
 </body>
 </html>
