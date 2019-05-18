@@ -6,7 +6,8 @@
 <title>Debug</title>
 <link href="<c:url value="/resources/bootstrap.min.css"/>"
 	rel="stylesheet">
-<link href="<c:url value="/resources/vendor/datatables/dataTables.bootstrap4.css"/>"
+<link
+	href="<c:url value="/resources/vendor/datatables/dataTables.bootstrap4.css"/>"
 	rel="stylesheet">
 </head>
 <body>
@@ -35,12 +36,12 @@
 							</thead>
 							<tbody>
 								<c:forEach var="peserta" items="${pesertas}">
-								<tr>
-									<td>${peserta.id}</td>
-									<td>${peserta.name}</td>
-									<td>${peserta.email}</td>
-									<td>button crud</td>
-								</tr>
+									<tr>
+										<td>${peserta.id}</td>
+										<td>${peserta.name}</td>
+										<td>${peserta.email}</td>
+										<td>button crud</td>
+									</tr>
 								</c:forEach>
 							</tbody>
 						</table>
