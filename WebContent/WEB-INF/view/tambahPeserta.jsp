@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html>
   <head>
@@ -7,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>CAT BKD - Tambah Peserta</title>
+    <title>CAT Tambah Peserta</title>
     <link href="
     <c:url value="/resources/bootstrap.min.css"/>
     " rel="stylesheet">
@@ -84,47 +85,51 @@
     </nav>
     <div class="content-wrapper">
       <div class="container-fluid">
-        <div class="card mb-3">
-          <div class="card-header">
-            <i class="fa fa-pencil-square-o"></i> Form Tambah Data Peserta Ujian CAT
-          </div>
-          <div class="card-body">
-            <form method="POST" action="http://localhost:8000/admin/peserta" accept-charset="UTF-8">
-              <input name="_token" type="hidden" value="AkJlvvYCujA9EABMSaonbK5XFEaSvYkgjKUgKBPP">
-              <div class="form-group row">
-                <div class="col-5">
-                  <label for="name">Nama Peserta</label>
-                  <input class="form-control" placeholder="Nama Peserta" required name="name" type="text" value="" id="name">
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-5">
-                  <label for="email">Email Peserta</label>
-                  <input class="form-control" placeholder="Email Peserta" required name="email" type="email" value="" id="email">
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-5">
-                  <label for="password">Password</label>
-                  <input class="form-control" placeholder="Password Peserta" required name="password" type="text" value="" id="password">
+      
+<div class="card mb-3">
+  <div class="card-header">
+    <i class="fa fa-pencil-square-o"></i> Form Tambah Data Peserta Ujian CAT
+  </div>
+
+  <div class="card-body">
+    <form:form method="POST" action="tambahProcess" modelAttribute="peserta">
+      <div class="form-group row">
+        <div class="col-5">
+          <label for="name">Nama Peserta</label>
+          <form:input cssClass="form-control" placeholder="Nama Peserta" required="required" path="name" />
+                  </div>
+          <form:errors path="name" cssClass="alert alert-danger"/>
+      </div>
+      <div class="form-group row">
+        <div class="col-5">
+          <label for="email">Email Peserta</label>
+          <form:input cssClass="form-control" placeholder="Email Peserta" required="required" path="email" />
+                  </div>
+          <form:errors path="email" cssClass="alert alert-danger"/>
+      </div>
+      <div class="form-group row">
+        <div class="col-5">
+          <label for="password">Password</label>
+          <form:password cssClass="form-control" placeholder="Password Peserta" required="required" path="password" />
+          <form:errors path="password" cssClass="alert alert-danger"/>
                 </div>
               </div>
               <br>
               <center>
                 <input class="btn btn-primary" type="submit" value="Submit">
               </center>
-            </form>
-          </div>
+    </form:form>
+  </div>
+</div>
+</div>
+    <!-- /.container-fluid-->
+    <!-- /.content-wrapper-->
+    <footer class="sticky-footer">
+      <div class="container">
+        <div class="text-center">
+          <small>Institut Teknologi Sepuluh Nopember &copy; 2019</small>
         </div>
       </div>
-      <!-- /.container-fluid-->
-      <!-- /.content-wrapper-->
-      <footer class="sticky-footer">
-        <div class="container">
-          <div class="text-center">
-            <small>Institut Teknologi Sepuluh Nopember &copy 2019</a></small>
-          </div>
-        </div>
       </footer>
       <!-- Scroll to Top Button-->
       <a class="scroll-to-top rounded" href="#page-top">
@@ -137,7 +142,7 @@
             <div class="modal-header">
               <h5 class="modal-title" id="exampleModalLabel">Apakah anda yakin ingin Logout?</h5>
               <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">×</span>
+              <span aria-hidden="true">ï¿½</span>
               </button>
             </div>
             <div class="modal-footer">
@@ -159,13 +164,11 @@
       <c:url value="/resources/jquery.min.js"/>
       "
       type="text/javascript"></script>
-      <script
-      src="
+      <script src="
       <c:url value="/resources/vendor/datatables/jquery.dataTables.js"/>
       "
       type="text/javascript"></script>
-      <script
-      src="
+      <script src="
       <c:url value="/resources/vendor/datatables/dataTables.bootstrap4.js"/>
       "
       type="text/javascript"></script>

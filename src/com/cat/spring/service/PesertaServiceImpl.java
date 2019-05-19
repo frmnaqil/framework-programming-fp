@@ -2,6 +2,8 @@ package com.cat.spring.service;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -21,6 +23,15 @@ public class PesertaServiceImpl implements PesertaService {
 	public List<Peserta> getPeserta() {
 		// TODO Auto-generated method stub
 		return pesertaDAO.getPeserta();
+	}
+
+	@Override
+	@Transactional
+	public void storePeserta2(@Valid Peserta pesertaObject) {
+		// TODO Auto-generated method stub
+		
+		pesertaDAO.storePeserta2(pesertaObject);
+		
 	}
 
 }

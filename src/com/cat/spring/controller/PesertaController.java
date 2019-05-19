@@ -24,6 +24,7 @@ public class PesertaController {
 	@Autowired
 	private PesertaService pesertaService;
 	
+	// @GetMapping("/")
 	@GetMapping("/indexPeserta")
 	public String indexPeserta(Model theModel) {
 		
@@ -86,15 +87,24 @@ public class PesertaController {
 
 		}
 
-//		if (true) {
-//			
-//			return "home";
-//			
-//		} else {
-//			
-//			return "register";
-//
-//		}
+	}
+	
+	@PostMapping("/tambahProcess")
+	public String storePeserta2(@Valid @ModelAttribute("peserta") Peserta pesertaObject,
+			BindingResult theBindingResult) {
+
+		if (theBindingResult.hasErrors()) {
+
+			return "/tambahPeserta";
+
+		} else {
+			
+			pesertaService.storePeserta2(pesertaObject);
+
+			return "redirect:/peserta/indexPeserta";
+
+		}
+
 	}
 
 }

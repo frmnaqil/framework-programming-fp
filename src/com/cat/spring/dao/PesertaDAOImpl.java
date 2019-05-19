@@ -2,6 +2,8 @@ package com.cat.spring.dao;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
@@ -33,6 +35,17 @@ public class PesertaDAOImpl implements PesertaDAO {
 		
 		// return the results
 		return pesertas;
+	}
+
+	@Override
+	public void storePeserta2(@Valid Peserta pesertaObject) {
+		
+		// get current hibernate session
+		Session currentSession = sessionFactory.getCurrentSession();
+		
+		// save the peserta
+		currentSession.save(pesertaObject);
+		
 	}
 
 }
