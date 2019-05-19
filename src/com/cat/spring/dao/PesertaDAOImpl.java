@@ -60,4 +60,19 @@ public class PesertaDAOImpl implements PesertaDAO {
 		return peserta;
 	}
 
+	@Override
+	public void delete(int noId) {
+		
+		// get current hibernate session
+		Session currentSession = sessionFactory.getCurrentSession();
+		
+		// delete object with primary
+		Query theQuery =
+				currentSession.createQuery("delete from Peserta where id=:pesertaId");
+		theQuery.setParameter("pesertaId", noId);
+		
+		theQuery.executeUpdate();
+		
+	}
+
 }

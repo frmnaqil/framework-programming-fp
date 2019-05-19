@@ -13,5 +13,7 @@ public interface PesertaService {
 	public void save(@Valid Peserta pesertaObject);
 
 	public Peserta getPeserta(int noId);
+
+	public void delete(int noId);
 	
 }
