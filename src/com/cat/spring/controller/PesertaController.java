@@ -8,25 +8,27 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.cat.spring.dao.PesertaDAO;
 import com.cat.spring.entity.Peserta;
+import com.cat.spring.service.PesertaService;
 
 @Controller
 @RequestMapping("/peserta")
 public class PesertaController {
 	
-	// need to inject the Peserta DAO 
+	// need to inject our peserta service
 	@Autowired
-	private PesertaDAO pesertaDAO;
+	private PesertaService pesertaService;
 	
-	@RequestMapping("/indexPeserta")
+	@GetMapping("/indexPeserta")
 	public String indexPeserta(Model theModel) {
 		
-		// get Peserta from DAO
-		List<Peserta> pesertaObject = pesertaDAO.getPeserta();
+		// get Peserta from the service
+		List<Peserta> pesertaObject = pesertaService.getPeserta();
 		
 		// Add the Peserta to the Model
 		theModel.addAttribute("pesertas", pesertaObject);
@@ -58,7 +60,7 @@ public class PesertaController {
 		return "ubahPeserta";
 	}
 
-	@RequestMapping("/register")
+	@GetMapping("/register")
 	public String createPeserta(Model theModel) {
 
 		// create a peserta object
@@ -70,7 +72,7 @@ public class PesertaController {
 		return "register";
 	}
 
-	@RequestMapping("/registerProcess")
+	@PostMapping("/registerProcess")
 	public String storePeserta(@Valid @ModelAttribute("peserta") Peserta pesertaObject,
 			BindingResult theBindingResult) {
 
