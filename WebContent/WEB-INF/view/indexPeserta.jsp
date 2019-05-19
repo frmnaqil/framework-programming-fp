@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>CAT BKD - Peserta</title>
+  <title>CAT BKD - Index Peserta</title>
   <link href="<c:url value="/resources/bootstrap.min.css"/>" rel="stylesheet">
   <link href="<c:url value="/resources/vendor/datatables/dataTables.bootstrap4.css"/>"rel="stylesheet">
   <link href="<c:url value="/resources/vendor/font-awesome/css/font-awesome.min.css"/>" rel="stylesheet">
@@ -18,22 +18,28 @@
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="http://localhost:8000/admin"><b>ITS</b> Admin</a>
+    <a class="navbar-brand" href="#"><b>ITS</b> Admin</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
       <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-          <a class="nav-link" href="http://localhost:8000/admin">
+          <a class="nav-link" href="http://localhost:8080/framework-programming-fp/admin">
             <i class="fa fa-fw fa-dashboard"></i>
             <span class="nav-link-text">Dashboard</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Soal">
-          <a class="nav-link" href="http://localhost:8000/admin/soal">
+          <a class="nav-link" href="http://localhost:8080/framework-programming-fp/soal/indexSoal">
             <i class="fa fa-fw fa-superscript"></i>
             <span class="nav-link-text">Soal</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Soal">
+          <a class="nav-link" href="http://localhost:8080/framework-programming-fp/peserta/indexPeserta">
+            <i class="fa fa-fw fa-user"></i>
+            <span class="nav-link-text">Peserta</span>
           </a>
         </li>      </ul>
       <ul class="navbar-nav sidenav-toggler">
@@ -70,7 +76,7 @@
 <div class="card mb-3">
 				<div class="card-header">
 					<a class="btn btn-success float-right btn-sm"
-						href="{{ url('/admin/peserta/create') }}"><i
+						href="http://localhost:8080/framework-programming-fp/peserta/tambahPeserta"><i
 						class="fa fa-plus-circle"></i> Tambah Peserta</a> <i
 						class="fa fa-table"></i> Daftar Peserta Ujian CAT
 				</div>
