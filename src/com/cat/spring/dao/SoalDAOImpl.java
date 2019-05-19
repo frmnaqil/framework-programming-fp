@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.cat.spring.entity.Peserta;
 import com.cat.spring.entity.Soal;
 
 @Repository
@@ -39,14 +40,24 @@ public class SoalDAOImpl implements SoalDAO {
 	}
 
 	@Override
-	public void storeSoal2(@Valid Soal soalObject) {
-		
+	public void save(@Valid Soal soalObject) {
 		// get current hibernate session
 		Session currentSession = sessionFactory.getCurrentSession();
-		
+				
 		// save the soal
-		currentSession.save(soalObject);
+		currentSession.saveOrUpdate(soalObject);
 		
+	}
+
+	@Override
+	public Soal getSoal(int noId) {
+		// get current hibernate session
+		Session currentSession = sessionFactory.getCurrentSession();
+				
+		// now retrieve/read from database using primary key
+		Soal soal = currentSession.get(Soal.class, noId);
+				
+		return soal;
 	}
 
 }

@@ -4,12 +4,15 @@ import java.util.List;
 
 import javax.validation.Valid;
 
+import com.cat.spring.entity.Peserta;
 import com.cat.spring.entity.Soal;
 
 public interface SoalDAO {
 	
 	public List<Soal> getSoal();
 
-	public void storeSoal2(@Valid Soal soalObject);
+	public void save(@Valid Soal soalObject);
+
+	public Soal getSoal(int noId);
 
 }
