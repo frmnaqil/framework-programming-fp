@@ -10,6 +10,8 @@ public interface PesertaDAO {
 	
 	public List<Peserta> getPeserta();
 
-	public void storePeserta2(@Valid Peserta pesertaObject);
+	public void save(@Valid Peserta pesertaObject);
+
+	public Peserta getPeserta(int noId);
 
 }

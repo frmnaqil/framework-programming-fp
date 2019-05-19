@@ -105,12 +105,15 @@
               </thead>
               <tbody>
                 <c:forEach var="peserta" items="${pesertas}">
+                  <c:url var="updateLink" value="/peserta/ubahPeserta">
+                    <c:param name="pesertaId" value="${peserta.id}" />
+                  </c:url>
                   <tr>
                     <td>${peserta.id}</td>
                     <td>${peserta.name}</td>
                     <td>${peserta.email}</td>
                     <td>
-                      <a class="btn btn-warning btn-sm btn-block" href="http://localhost:8080/framework-programming-fp/peserta/ubahPeserta">Edit</a>
+                      <a class="btn btn-warning btn-sm btn-block" href="${updateLink}">Edit</a>
                       <form method="POST" action="http://localhost:8000/admin/peserta/1" accept-charset="UTF-8"><input name="_token" type="hidden" value="AkJlvvYCujA9EABMSaonbK5XFEaSvYkgjKUgKBPP">
                         <input name="_method" type="hidden" value="DELETE">
                         <input class="btn btn-danger btn-sm btn-block" type="submit" value="Delete">
