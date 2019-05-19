@@ -6,7 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.cat.spring.entity.Peserta;
+import com.cat.spring.dao.soalDAO;
 
 @Controller
 @RequestMapping("/soal")
@@ -15,11 +15,11 @@ public class SoalController {
 	@RequestMapping("/indexSoal")
 	public String indexSoal(Model theModel) {
 		
-		// get Peserta from DAO
-		//List<Peserta> pesertaObject = pesertaDAO.getPeserta();
+		// get Soal from DAO
+		List<Soal> soalObject = soalDAO.getSoal();
 		
-		// Add the Peserta to the Model
-		//theModel.addAttribute("pesertas", pesertaObject);
+		// Add the Soal to the Model
+		theModel.addAttribute("soals", soalObject);
 		
 		return "indexSoal";
 	}
