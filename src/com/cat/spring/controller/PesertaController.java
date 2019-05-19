@@ -33,6 +33,30 @@ public class PesertaController {
 		
 		return "indexPeserta";
 	}
+	
+	@RequestMapping("/tambahPeserta")
+	public String tambahPeserta(Model theModel) {
+		
+		// create a peserta object
+		Peserta pesertaObject = new Peserta();
+	
+		// add peserta object to the model
+		theModel.addAttribute("peserta", pesertaObject);
+		
+		return "tambahPeserta";
+	}
+	
+	@RequestMapping("/ubahPeserta")
+	public String ubahPeserta(Model theModel) {
+		
+		// get Peserta from DAO
+		//List<Peserta> pesertaObject = pesertaDAO.getPeserta();
+		
+		// Add the Peserta to the Model
+		//theModel.addAttribute("pesertas", pesertaObject);
+		
+		return "ubahPeserta";
+	}
 
 	@RequestMapping("/register")
 	public String createPeserta(Model theModel) {
