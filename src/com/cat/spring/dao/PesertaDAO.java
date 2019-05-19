@@ -14,4 +14,6 @@ public interface PesertaDAO {
 
 	public Peserta getPeserta(int noId);
 
+	public void delete(int noId);
+
 }

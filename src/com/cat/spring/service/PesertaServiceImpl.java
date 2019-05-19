@@ -41,4 +41,12 @@ public class PesertaServiceImpl implements PesertaService {
 		return pesertaDAO.getPeserta(noId);
 	}
 
+	@Override
+	@Transactional
+	public void delete(int noId) {
+		 
+		pesertaDAO.delete(noId);
+		
+	}
+
 }

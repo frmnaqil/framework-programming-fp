@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>CAT BKD - Index Peserta</title>
+    <title>CAT Index Peserta</title>
     <link href="
     <c:url value="/resources/bootstrap.min.css"/>
     " rel="stylesheet">
@@ -108,16 +108,17 @@
                   <c:url var="updateLink" value="/peserta/ubahPeserta">
                     <c:param name="pesertaId" value="${peserta.id}" />
                   </c:url>
+                  <c:url var="deleteLink" value="/peserta/delete">
+                    <c:param name="pesertaId" value="${peserta.id}"></c:param>
+                  </c:url>
                   <tr>
                     <td>${peserta.id}</td>
                     <td>${peserta.name}</td>
                     <td>${peserta.email}</td>
                     <td>
                       <a class="btn btn-warning btn-sm btn-block" href="${updateLink}">Edit</a>
-                      <form method="POST" action="http://localhost:8000/admin/peserta/1" accept-charset="UTF-8"><input name="_token" type="hidden" value="AkJlvvYCujA9EABMSaonbK5XFEaSvYkgjKUgKBPP">
-                        <input name="_method" type="hidden" value="DELETE">
-                        <input class="btn btn-danger btn-sm btn-block" type="submit" value="Delete">
-                      </form>
+                      <a class="btn btn-danger btn-sm btn-block" href="${deleteLink}" 
+                        onclick="if (!(confirm('Are you sure you want to delete this customer?'))) return false">Delete</a>
                     </td>
                   </tr>
                 </c:forEach>

@@ -98,6 +98,14 @@ public class PesertaController {
 		}
 		
 	}
+	
+	@GetMapping("/delete")
+	public String deleteCustomer(@RequestParam("pesertaId") int noId) {
+		
+		pesertaService.delete(noId);
+		
+		return "redirect:/peserta/indexPeserta";
+	}
 
 	@GetMapping("/register")
 	public String createPeserta(Model theModel) {
