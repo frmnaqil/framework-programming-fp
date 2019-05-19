@@ -13,6 +13,16 @@ public class HomeController {
 		return "home";
 	}
 	
+	@RequestMapping("/signinPeserta")
+	public String signinPeserta() {
+		return "signinPeserta";
+	}
+	
+	@RequestMapping("/soalujian")
+	public String soalujian() {
+		return "soalujian";
+	}
+	
 	@RequestMapping("/admin")
 	public String admin() {
 		return "admindashboard";
@@ -21,6 +31,11 @@ public class HomeController {
 	@RequestMapping("/adminsoal")
 	public String adminsoal() {
 		return "adminsoal";
+	}
+	
+	@RequestMapping("/startUjian")
+	public String startUjian() {
+		return "startUjian";
 	}
 	
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
