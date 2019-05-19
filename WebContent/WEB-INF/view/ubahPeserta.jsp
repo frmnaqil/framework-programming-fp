@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
@@ -7,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>CAT BKD - Ubah Peserta</title>
+    <title>CAT Ubah Peserta</title>
     <link href="
     <c:url value="/resources/bootstrap.min.css"/>
     " rel="stylesheet">
@@ -89,31 +90,31 @@
             <i class="fa fa-pencil-square-o"></i> Form Ubah Data Peserta Ujian CAT
           </div>
           <div class="card-body">
-            <form method="POST" action="http://localhost:8000/admin/peserta" accept-charset="UTF-8">
-              <input name="_token" type="hidden" value="AkJlvvYCujA9EABMSaonbK5XFEaSvYkgjKUgKBPP">
+            <form:form method="POST" action="ubahProcess" modelAttribute="peserta">
+              <form:hidden path="id"/>
               <div class="form-group row">
                 <div class="col-5">
                   <label for="name">Nama Peserta</label>
-                  <input class="form-control" placeholder="Nama Peserta" required name="name" type="text" value="" id="name">
+                  <form:input class="form-control" placeholder="Nama Peserta" required="required" path="name" />
                 </div>
               </div>
               <div class="form-group row">
                 <div class="col-5">
                   <label for="email">Email Peserta</label>
-                  <input class="form-control" placeholder="Email Peserta" required name="email" type="email" value="" id="email">
+                  <form:input class="form-control" placeholder="Email Peserta" required="required" path="email" value="" id="email"/>
                 </div>
               </div>
               <div class="form-group row">
                 <div class="col-5">
                   <label for="password">Password</label>
-                  <input class="form-control" placeholder="Password Peserta" required name="password" type="text" value="" id="password">
+                  <form:input class="form-control" placeholder="Password Peserta" required="required" path="password"/>
                 </div>
               </div>
               <br>
               <center>
                 <input class="btn btn-primary" type="submit" value="Submit">
               </center>
-            </form>
+            </form:form>
           </div>
         </div>
       </div>

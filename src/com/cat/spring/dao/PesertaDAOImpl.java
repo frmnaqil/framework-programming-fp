@@ -38,14 +38,26 @@ public class PesertaDAOImpl implements PesertaDAO {
 	}
 
 	@Override
-	public void storePeserta2(@Valid Peserta pesertaObject) {
+	public void save(@Valid Peserta pesertaObject) {
 		
 		// get current hibernate session
 		Session currentSession = sessionFactory.getCurrentSession();
 		
 		// save the peserta
-		currentSession.save(pesertaObject);
+		currentSession.saveOrUpdate(pesertaObject);
 		
+	}
+
+	@Override
+	public Peserta getPeserta(int noId) {
+
+		// get current hibernate session
+		Session currentSession = sessionFactory.getCurrentSession();
+		
+		// now retrieve/read from database using primary key
+		Peserta peserta = currentSession.get(Peserta.class, noId);
+		
+		return peserta;
 	}
 
 }

@@ -27,11 +27,18 @@ public class PesertaServiceImpl implements PesertaService {
 
 	@Override
 	@Transactional
-	public void storePeserta2(@Valid Peserta pesertaObject) {
+	public void save(@Valid Peserta pesertaObject) {
 		// TODO Auto-generated method stub
 		
-		pesertaDAO.storePeserta2(pesertaObject);
+		pesertaDAO.save(pesertaObject);
 		
+	}
+
+	@Override
+	@Transactional
+	public Peserta getPeserta(int noId) {
+		// TODO Auto-generated method stub
+		return pesertaDAO.getPeserta(noId);
 	}
 
 }
