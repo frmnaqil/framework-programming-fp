@@ -7,7 +7,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 
 @Entity
@@ -20,7 +19,7 @@ public class Soal {
 	private int id;
 	
 	@NotNull(message="Desc is required")
-	@Column(name="desc")
+	@Column(name="deskripsi")
 	private String desc;
 	
 	@NotNull(message="Opsi1 is required")

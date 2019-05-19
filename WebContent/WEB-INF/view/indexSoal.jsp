@@ -108,14 +108,15 @@
                 </tr>
               </thead>
               <tbody>
-                <c:forEach var="peserta" items="${pesertas}">
+                <c:forEach var="soal" items="${soals}">
                   <tr>
-                    <td>${peserta.id}</td>
-                    <td>${peserta.name}</td>
-                    <td>${peserta.email}</td>
-                    <td>${peserta.id}</td>
-                    <td>${peserta.id}</td>
-                    <td>${peserta.id}</td>
+                    <td>${soal.id}</td>
+                    <td>${soal.desc}</td>
+                    <td>${soal.opsi1}</td>
+                    <td>${soal.opsi2}</td>
+                    <td>${soal.opsi3}</td>
+                    <td>${soal.opsi4}</td>
+                    <td>${soal.kunci}</td>
                     <td>
                       <a class="btn btn-warning btn-sm btn-block" href="http://localhost:8080/framework-programming-fp/soal/ubahSoal">Edit</a>
                       <form method="POST" action="http://localhost:8000/admin/peserta/1" accept-charset="UTF-8"><input name="_token" type="hidden" value="AkJlvvYCujA9EABMSaonbK5XFEaSvYkgjKUgKBPP">

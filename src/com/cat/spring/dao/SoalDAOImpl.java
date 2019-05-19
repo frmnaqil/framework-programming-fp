@@ -9,17 +9,19 @@ import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.cat.spring.entity.Soal;
 
 @Repository
-public class soalDAOImpl implements soalDAO {
+public class SoalDAOImpl implements SoalDAO {
 
 	// need to inject the session factory
 	@Autowired
 	private SessionFactory sessionFactory;
 	
 	@Override
+	@Transactional
 	public List<Soal> getSoal() {
 		
 		// get the current hibernate session
