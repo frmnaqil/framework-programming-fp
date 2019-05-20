@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
@@ -7,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>CAT BKD - Tambah Soal</title>
+    <title>CAT Tambah Soal</title>
     <link href="
     <c:url value="/resources/bootstrap.min.css"/>
     " rel="stylesheet">
@@ -89,46 +90,45 @@
           <i class="fa fa-pencil-square-o"></i> Form Tambah Data Soal Ujian CAT
         </div>
         <div class="card-body">
-          <form method="POST" action="http://localhost:8000/admin/soal" accept-charset="UTF-8" enctype="multipart/form-data">
-            <input name="_token" type="hidden" value="AkJlvvYCujA9EABMSaonbK5XFEaSvYkgjKUgKBPP">
+          <form:form method="POST" action="tambahProcess" modelAttribute="soal">
             <div class="form-group">
               <label for="deskripsi">Deskripsi</label>
-              <textarea id="article-ckeditor" class="form-control" placeholder="Deskripsi Soal" required name="deskripsi" cols="50" rows="10"></textarea>
+              <form:textarea class="form-control" placeholder="Deskripsi Soal" required="required" path="desc" cols="50" rows="10" />
             </div>
             <div class="container">
               <div class="row">
                 <div class="col">
                   <label for="opsi1">Opsi 1</label>
-                  <textarea id="article-ckeditor1" class="form-control" placeholder="Opsi 1" required name="opsi1" cols="50" rows="10"></textarea>
+                  <form:textarea class="form-control" placeholder="Opsi 1" required="required" path="opsi1" cols="50" rows="10" />
                 </div>
                 <div class="col">
                   <label for="opsi2">Opsi 2</label>
-                  <textarea id="article-ckeditor2" class="form-control" placeholder="Opsi 2" required name="opsi2" cols="50" rows="10"></textarea>
+                  <form:textarea class="form-control" placeholder="Opsi 2" required="required" path="opsi2" cols="50" rows="10" />
                 </div>
                 <div class="w-100">
                   <br>
                 </div>
                 <div class="col">
                   <label for="opsi3">Opsi 3</label>
-                  <textarea id="article-ckeditor3" class="form-control" placeholder="Opsi 3" required name="opsi3" cols="50" rows="10"></textarea>
+                  <form:textarea class="form-control" placeholder="Opsi 2" required="required" path="opsi3" cols="50" rows="10" />
                 </div>
                 <div class="col">
                   <label for="opsi4">Opsi 4</label>
-                  <textarea id="article-ckeditor4" class="form-control" placeholder="Opsi 4" required name="opsi4" cols="50" rows="10"></textarea>
+                  <form:textarea class="form-control" placeholder="Opsi 2" required="required" path="opsi4" cols="50" rows="10" />
                 </div>
               </div>
               <center>
                 <div class="form-group">
                   <div class="col-6">
                     <label for="jawaban">Jawaban Benar</label>
-                    <input id="demo" class="form-control" placeholder="Ketik jawaban yang benar" required name="jawaban" type="text" value="">
+                    <form:input class="form-control" placeholder="Ketik jawaban yang benar" required="required" path="kunci" />
                   </div>
                 </div>
               </center>
               <center>
                 <input class="btn btn-primary" type="submit" value="Submit">
               </center>
-          </form>
+          </form:form>
           </div>
         </div>
       </div>

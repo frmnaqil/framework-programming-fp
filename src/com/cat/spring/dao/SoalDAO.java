@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.validation.Valid;
 
-import com.cat.spring.entity.Peserta;
 import com.cat.spring.entity.Soal;
 
 public interface SoalDAO {

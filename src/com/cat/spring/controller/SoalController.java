@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.cat.spring.dao.SoalDAO;
 import com.cat.spring.entity.Soal;
+import com.cat.spring.service.SoalService;
 
 @Controller
 @RequestMapping("/soal")
@@ -23,13 +23,13 @@ public class SoalController {
 	
 	// need to inject the Soal DAO
 	@Autowired
-	private SoalDAO soalDAO;
+	private SoalService soalService;
 	
 	@RequestMapping("/indexSoal")
 	public String indexSoal(Model theModel) {
 		
 		// get Soal from DAO
-		List<Soal> soalObject = soalDAO.getSoal();
+		List<Soal> soalObject = soalService.getSoal();
 		
 		// Add the Soal to the Model
 		theModel.addAttribute("soals", soalObject);
@@ -59,7 +59,7 @@ public class SoalController {
 
 		} else {
 			
-			soalDAO.save(soalObject);
+			soalService.save(soalObject);
 
 			return "redirect:/soal/indexSoal";
 
@@ -71,7 +71,7 @@ public class SoalController {
 	public String ubahSoal(@RequestParam("soalId") int noId, Model theModel) {
 		
 		// get the soal from our service
-		Soal soalObject = soalDAO.getSoal(noId);
+		Soal soalObject = soalService.getSoal(noId);
 		
 		// set soal as a model attribute to pre-populate the form
 		theModel.addAttribute("soal", soalObject);
@@ -90,7 +90,7 @@ public class SoalController {
 
 		} else {
 			
-			soalDAO.save(soalObject);
+			soalService.save(soalObject);
 
 			return "redirect:/soal/indexSoal";
 

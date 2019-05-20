@@ -128,8 +128,11 @@ public class PesertaController {
 			return "register";
 
 		} else {
+			
+			pesertaService.save(pesertaObject);
 
-			return "blank";
+			return "redirect:/";
+
 
 		}
 
